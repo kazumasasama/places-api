@@ -6,11 +6,15 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
-place = Place.new(name: "Little Island", address: "Pier 55 at Hudson River Park Hudson River Greenway, NY 10014")
+place = Place.new(name: "Tokyo Tower", address: "Tokyo Tower", latitude: 35.658578, longitude: 139.745429)
 place.save
-place = Place.new(name: "The Shed", address: "545 W 30th St, New York, NY 10001")
+place = Place.new(name: "The Best Spicy Ramen in Tokyo", address: "COUKI Soshigayaokura", latitude: 35.642693, longitude: 139.609022)
 place.save
-place = Place.new(name: "Chrysler Building", address: "405 Lexington Ave, New York, NY 10174")
+place = Place.new(name: "Nostalgic Tokyo", address: "Shinjuku Golden Gai", latitude: 35.69411, longitude: 139.70474)
 place.save
-place = Place.new(name: "Brooklyn Bridge", address: "Brooklyn Bridge, New York, NY 10038")
+place = Place.new(name: "Luxury Shopping", address: "Isetan Shinjuku", latitude: 35.69164, longitude: 139.70462)
+place.save
+place = Place.new(name: "Yayoi Kusama", address: "Yayoi Kusama Museum", latitude: 35.70321, longitude: 139.72653)
+place.save
+place = Place.new(name: "¥¥ MONEY ¥¥", address: "Minato City", latitude: 35.658100, longitude: 139.751500)
 place.save

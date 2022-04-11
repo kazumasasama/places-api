@@ -11,9 +11,12 @@ class PlacesController < ApplicationController
   end
 
   def create
+    geocode = Geocoder.search(params[:address]).first.coordinates
     place = Place.new(
       name: params[:name],
-      address: params[:address]
+      address: params[:address],
+      latitude: geocode[0].to_f,
+      longitude: geocode[1].to_f
     )
     if place.save
       render json: place.as_json
@@ -23,9 +26,15 @@ class PlacesController < ApplicationController
   end
 
   def update
+    geocode = Geocoder.search(params[:address]).first.coordinates
+
     place = Place.find(params[:id])
     place.name = params[:name] || place.name
     place.address = params[:address] || place.address
+    if place.address == params[:address]
+      place.latitude = geocode[0].to_f
+      place.longitude = geocode[1].to_f
+    end
     if place.save
       render json: place.as_json
     else
